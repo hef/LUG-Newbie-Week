@@ -8,4 +8,6 @@
 *.swp
 *.vrb
 *~
-
+*.make
+*.d
+*.fls
