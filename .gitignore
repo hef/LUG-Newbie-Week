@@ -1,4 +1,5 @@
 *.aux
+*.cookie
 *.log
 *.nav
 *.out
