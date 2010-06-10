@@ -5,6 +5,7 @@
 *.pdf
 *.snm
 *.toc
+*.temp
 *.swp
 *.vrb
 *~
