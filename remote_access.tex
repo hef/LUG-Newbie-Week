@@ -9,6 +9,63 @@
 \section[outline]{}
 \frame{\tableofcontents}
 \section{ssh}
+\subsection{ssh: the {\bf s}ecure {\bf sh}ell}
+\frame
+{
+  \frametitle{ssh: the secure shell}
+  Used to access your linux computer from anywhere
+}
+\subsection{bert example}
+\frame
+{
+  \frametitle{bert example}
+  hef@acm:\~\$ ssh ssennebo@bert.cs.uic.edu\\
+  The authenticity of host 'bert.cs.uic.edu (131.193.40.32)' can't be established.\\
+  RSA key fingerprint is 99:6a:e7:86:1f:de:19:fd:33:05:33:e8:0b:b2:72:b8.\\
+  Are you sure you want to continue connecting (yes/no)? yes\\
+  Warning: Permanently added 'bert.cs.uic.edu,131.193.40.32\\
+  $[$ssennebo@bert$]$ \~\$
+}
+\subsection{how it works}
+\frame
+{
+  \frametitle{objectives of private/public keypair communication}
+  \begin{itemize}
+  \item{secure}
+  \item{ability to verify identify does not enable imitation of identity}
+  \item{a recorded network sessions cannot be replayed or reproduced by either side}
+  \end{itemize}
+}
+\section{persistance}
+\subsection{disown the process}
+\frame
+{
+  \frametitle{disown the process}
+  \begin{itemize}
+  \item{press ctrl + z}
+  \item{run `bg`}
+  \item{run `disown -h`}
+  \end{itemize}
+}
+\subsection{screen}
+\frame
+{
+  \frametitle{screen}
+  screen is a Terminal Multiplexor.\\
+  This lets us create screen sessions, and disconnect and reconnect to the freely.
+}
+\frame
+{
+  \frametitle{using screen}
+  \begin{itemize}
+  \item{screen -R irc}
+  \item{run irssi}
+  \item{press ctrl + a,d}
+  \item{connect from somewhere else (or not)}
+  \item{run screen -R irc}
+  \end{itemize}
+}
+
 \section{connecting from windows}
 \subsection{putty}
 \subsection{winscp}
