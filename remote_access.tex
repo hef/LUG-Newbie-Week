@@ -101,8 +101,31 @@
   \item{run screen -R irc}
   \end{itemize}
 }
+\section{file transfer}
+\subsection{scp}
+\frame
+{
+    \frametitle{scp: secure copy}
+    \begin{itemize}
+    \item{scp locafile user@remotehost:/path/to/destination}
+    \item{scp user@remotehost:/path/to/file localfile}
+    \end{itemize}
+}
+\subsection{rsync}
+\frame
+{
+    \frametitle{rsync}
+}
 \section{passwordless logins}
 \subsection{ssh keys}
+\frame
+{
+    \frametitle{ssh keys}
+    \begin{itemize}
+    \item{SSH keys can be used as a secure alternative to password based logins}
+    \item{useful for ssh base version control systems like git, mercurial, and subversion}
+    \end{itemize}
+}
 \subsection{how a keypair works}
 \frame
 {
@@ -147,7 +170,28 @@
 }
 \section{connecting from other platforms}
 \subsection{putty}
+\frame
+{
+    \frametitle{putty}
+    \begin{itemize}
+    \item{windows based ssh client}
+    \item{support ssh-agent like abilities with paegent}
+    \end{itemize}
+}
 \subsection{winscp}
+\frame
+{
+    \frametitle{winscp}
+    \begin{itemize}
+    \item{windows based file transfer client}
+    \end{itemize}
+}
 \subsection{fugu}
-\section{ssh keys}
+\frame
+{
+    \frametitle{fugu}
+    \begin{itemize}
+    \item{OS X based Secure File Transfer client}
+    \end{itemize}
+}
 \end{document}
