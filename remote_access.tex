@@ -7,9 +7,9 @@
 \begin{document}
 \frame{\titlepage}
 \section[outline]{}
-\frame{\tableofcontents}
+\frame[shrink]{\tableofcontents}
 \section{ssh}
-\subsection{ssh: the {\bf s}ecure {\bf sh}ell}
+\subsection{ssh: The Secure SHell}
 \frame
 {
   \frametitle{ssh: the secure shell}
@@ -36,24 +36,60 @@
   \item{a recorded network sessions cannot be replayed or reproduced by either side}
   \end{itemize}
 }
+\subsection{public key encryption}
+\frame
+{
+    \frametitle{public key encryption}
+    \begin{itemize}
+    \item{A keypair consists of 2 parts: a private key and a public key}
+    \item{A public key is shared freely}
+    \item{A private key is kept secret}
+    \end{itemize}
+}
+\subsection{Server Fingerprint}
+\frame
+{
+    \frametitle{The FingerPrint}
+    \begin{itemize}
+    \item{The fingerprint is a public key}
+    \item{The client sends a message by encrypting data with the servers public key}
+    \item{The server uses its private key to decrypt the message}
+    \item{The server sends a response that the client uses to verify the identity of the server.}
+    \end{itemize}
+}
 \section{persistance}
+\subsection{The problem}
+\frame
+{
+    \frametitle{The problem}
+    With ssh, or any shell applicaiton, any program you launch becomes a child of that shell.  when you exit the shell, the program also exits.
+
+}
 \subsection{disown the process}
 \frame
 {
   \frametitle{disown the process}
   \begin{itemize}
-  \item{press ctrl + z}
-  \item{run `bg`}
-  \item{run `disown -h`}
+  \item{press ctrl + z to suspend the process}
+  \item{run `bg` to background suspened processes}
+  \item{run `disown -h` to disown background processes}
   \end{itemize}
 }
-\subsection{screen}
+\frame
+{
+    \frametitle{disadvantages}
+    \begin{itemize}
+    \item{cannot reconnect to the process}
+    \end{itemize}
+}
+\subsection{option 2: screen}
 \frame
 {
   \frametitle{screen}
   screen is a Terminal Multiplexor.\\
   This lets us create screen sessions, and disconnect and reconnect to the freely.
 }
+\subsection{using screen}
 \frame
 {
   \frametitle{using screen}
@@ -65,19 +101,53 @@
   \item{run screen -R irc}
   \end{itemize}
 }
-
-\section{connecting from windows}
+\section{passwordless logins}
+\subsection{ssh keys}
+\subsection{how a keypair works}
+\frame
+{
+    \frametitle{how a keypair works}
+    \begin{itemize}
+    \item{similar in concept to fingerprint identification}
+    \item{the server has your public key}
+    \item{the server send a challange message by encrypting data against your public key}
+    \item{you use your private key to decrypt the message and prove your identity}
+    \end{itemize}
+}
+\subsection{creating a ssh keypair}
+\frame
+{
+    \frametitle{creating a ssh keypair}
+    \begin{itemize}
+    \item{ssh-keygen}
+    \item{save file in defalt location (~/.ssh/id\_rsa)}
+    \item{enter a passphrase}
+    \item{confirm passphrase}
+    \end{itemize}
+}
+\subsection{copy public key}
+\frame
+{
+    \frametitle{copy public key}
+    \begin{itemize}
+    \item{copy public key (~/.ssh/id\_rsa.pub) to host computers in ~/.ssh/authorized\_keys2}
+    \item{ssh-copy-id can automate this task}
+    \end{itemize}
+}
+\subsection{ssh-agent}
+\frame
+{
+    \frametitle{ssh-agent}
+    an ssh-agent is a program that can keep your decrypted keys in memory, so that you only need to enter your passphrase once per session
+}
+\frame
+{
+    \frametitle{ssh-agent}
+    Most window manager come with an ssh-agent that will ask for your passphrase the first time you use a key, including gnome(ubuntu) and kde.  The commandline program `ssh-agent` can be used in instances where an existing ssh-agent is not available.
+}
+\section{connecting from other platforms}
 \subsection{putty}
 \subsection{winscp}
-\section{connecting from OS X}
-\subsection{ssh}
 \subsection{fugu}
-\section{connecting from linux}
-\subsection{ssh}
-\subsection{rsync}
 \section{ssh keys}
-\subsection{how does a keypair work}
-\subsection{creating your keypair}
-\subsection{copying your public key}
-\subsection{useing an ssh-agent}
 \end{document}
