@@ -7,7 +7,7 @@
 \begin{document}
 \frame{\titlepage}
 \section[outline]{}
-\frame[shrink]{\tableofcontents}
+\frame[allowframebreaks]{\tableofcontents}
 \section{ssh}
 \subsection{ssh: The Secure SHell}
 \frame
@@ -49,13 +49,93 @@
 \subsection{Server Fingerprint}
 \frame
 {
-    \frametitle{The FingerPrint}
+    \frametitle{The Fingerprint}
     \begin{itemize}
     \item{The fingerprint is a public key}
     \item{The client sends a message by encrypting data with the servers public key}
     \item{The server uses its private key to decrypt the message}
     \item{The server sends a response that the client uses to verify the identity of the server.}
     \end{itemize}
+}
+\section{file transfer}
+\subsection{scp a file}
+\frame
+{
+    \frametitle{scp: secure copy}
+    \begin{itemize}
+    \item{scp locafile user@remotehost:/path/to/destination/}
+    \item{scp user@remotehost:/path/to/file localdestination/}
+    \end{itemize}
+}
+\subsection{scp a directory}
+\frame
+{
+    \frametitle{scp: secure copy}
+    \begin{itemize}
+    \item{scp locafile user@remotehost:/path/to/destination}
+    \item{scp user@remotehost:/path/to/file localfile}
+    \end{itemize}
+}
+\subsection{rsync}
+\frame
+{
+    \frametitle{rsync}
+    \begin{itemize}
+    \item{Has prettier output, and can do updated file data only (syncing)}
+    \item{rsync -auP localfile user@remotehost:/path/to/destination}
+    \end{itemize}
+}
+\section{passwordless logins}
+\subsection{ssh keys}
+\frame
+{
+    \frametitle{ssh keys}
+    \begin{itemize}
+    \item{SSH keys can be used as a secure alternative to password based logins}
+    \item{useful for ssh base version control systems like git, mercurial, and subversion}
+    \end{itemize}
+}
+\subsection{how a keypair works}
+\frame
+{
+    \frametitle{how a keypair works}
+    \begin{itemize}
+    \item{similar in concept to fingerprint identification}
+    \item{the server has your public key}
+    \item{the server send a challange message by encrypting data against your public key}
+    \item{you use your private key to decrypt the message and prove your identity}
+    \end{itemize}
+}
+\subsection{creating a ssh keypair}
+\frame
+{
+    \frametitle{creating a ssh keypair}
+    \begin{itemize}
+    \item{ssh-keygen}
+    \item{save file in defalt location (\~/.ssh/id\_rsa)}
+    \item{enter a passphrase}
+    \item{confirm passphrase}
+    \end{itemize}
+}
+\subsection{copy public key}
+\frame
+{
+    \frametitle{copy public key}
+    \begin{itemize}
+    \item{copy public key (~/.ssh/id\_rsa.pub) to host computers in ~/.ssh/authorized\_keys2}
+    \item{ssh-copy-id can automate this task}
+    \end{itemize}
+}
+\subsection{ssh-agent}
+\frame
+{
+    \frametitle{ssh-agent}
+    an ssh-agent is a program that can keep your decrypted keys in memory, so that you only need to enter your passphrase once per session
+}
+\frame
+{
+    \frametitle{ssh-agent}
+    Most window manager come with an ssh-agent that will ask for your passphrase the first time you use a key, including gnome(ubuntu) and kde.  The commandline program `ssh-agent` can be used in instances where an existing ssh-agent is not available.
 }
 \section{persistance}
 \subsection{The problem}
@@ -101,73 +181,7 @@
   \item{run screen -R irc}
   \end{itemize}
 }
-\section{file transfer}
-\subsection{scp}
-\frame
-{
-    \frametitle{scp: secure copy}
-    \begin{itemize}
-    \item{scp locafile user@remotehost:/path/to/destination}
-    \item{scp user@remotehost:/path/to/file localfile}
-    \end{itemize}
-}
-\subsection{rsync}
-\frame
-{
-    \frametitle{rsync}
-}
-\section{passwordless logins}
-\subsection{ssh keys}
-\frame
-{
-    \frametitle{ssh keys}
-    \begin{itemize}
-    \item{SSH keys can be used as a secure alternative to password based logins}
-    \item{useful for ssh base version control systems like git, mercurial, and subversion}
-    \end{itemize}
-}
-\subsection{how a keypair works}
-\frame
-{
-    \frametitle{how a keypair works}
-    \begin{itemize}
-    \item{similar in concept to fingerprint identification}
-    \item{the server has your public key}
-    \item{the server send a challange message by encrypting data against your public key}
-    \item{you use your private key to decrypt the message and prove your identity}
-    \end{itemize}
-}
-\subsection{creating a ssh keypair}
-\frame
-{
-    \frametitle{creating a ssh keypair}
-    \begin{itemize}
-    \item{ssh-keygen}
-    \item{save file in defalt location (~/.ssh/id\_rsa)}
-    \item{enter a passphrase}
-    \item{confirm passphrase}
-    \end{itemize}
-}
-\subsection{copy public key}
-\frame
-{
-    \frametitle{copy public key}
-    \begin{itemize}
-    \item{copy public key (~/.ssh/id\_rsa.pub) to host computers in ~/.ssh/authorized\_keys2}
-    \item{ssh-copy-id can automate this task}
-    \end{itemize}
-}
-\subsection{ssh-agent}
-\frame
-{
-    \frametitle{ssh-agent}
-    an ssh-agent is a program that can keep your decrypted keys in memory, so that you only need to enter your passphrase once per session
-}
-\frame
-{
-    \frametitle{ssh-agent}
-    Most window manager come with an ssh-agent that will ask for your passphrase the first time you use a key, including gnome(ubuntu) and kde.  The commandline program `ssh-agent` can be used in instances where an existing ssh-agent is not available.
-}
+
 \section{connecting from other platforms}
 \subsection{putty}
 \frame
