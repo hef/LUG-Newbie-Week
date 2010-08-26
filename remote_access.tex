@@ -2,7 +2,7 @@
 \usepackage{beamerthemesplit}
 \usepackage{lmodern}
 \title{Connecting to linux from other systems}
-\author{hef}
+\author{UIC Linux Users Group}
 \date{\today}
 \begin{document}
 \frame{\titlepage}
@@ -57,6 +57,33 @@
     \item{The server sends a response that the client uses to verify the identity of the server.}
     \end{itemize}
 }
+\subsection{ssh config}
+\frame
+{
+	\frametitle{~/.ssh/config}
+	\begin{itemize}
+	\item{Host acm}
+	\item{Hostname acm.cs.uic.edu}
+	\item{User alice}
+	\item{Port 22}
+	\end{itemize}
+}
+\begin{frame}[fragile]
+\frametitle{without .ssh/config}
+\begin{verbatim}
+ssh alice@acm.cs.uic.edu -p 22
+scp -P 22 alice@acm.cs.uic.edu:/ ~/acm/
+rsync -e 'ssh -p 22' alice@acm.cs.uic.edu:~/ ~/acm/
+\end{verbatim}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{with .ssh/config}
+\begin{verbatim}
+ssh acm
+scp acm:/ ~/acm/
+rsync acm:~/ ~/acm/
+\end{verbatim}
+\end{frame}
 \section{file transfer}
 \subsection{scp a file}
 \frame
