@@ -3,7 +3,7 @@
 %\usepackage{beamerarticle}
 \usepackage{beamerthemesplit}
 \usepackage{lmodern}
-\title{Connecting to linux from other systems}
+\title{Connecting to Linux From Other Systems}
 \author{UIC Linux Users Group}
 \date{\today}
 \begin{document}
@@ -17,10 +17,10 @@
   \frametitle{ssh: the secure shell}
   Used to access your linux computer from anywhere
 }
-\subsection{bert example}
+\subsection{Bert Example}
 \frame
 {
-  \frametitle{bert example}
+  \frametitle{Bert Example}
   hef@acm:\~\$ ssh ssennebo@bert.cs.uic.edu\\
   The authenticity of host 'bert.cs.uic.edu (131.193.40.32)' can't be established.\\
   RSA key fingerprint is 99:6a:e7:86:1f:de:19:fd:33:05:33:e8:0b:b2:72:b8.\\
@@ -28,20 +28,20 @@
   Warning: Permanently added 'bert.cs.uic.edu,131.193.40.32\\
   $[$ssennebo@bert$]$ \~\$
 }
-\subsection{how it works}
+\subsection{How It Works}
 \frame
 {
-  \frametitle{objectives of private/public keypair communication}
+  \frametitle{Objectives of Private/Public Keypair Communication}
   \begin{itemize}
   \item{secure}
   \item{ability to verify identify does not enable imitation of identity}
   \item{a recorded network sessions cannot be replayed or reproduced by either side}
   \end{itemize}
 }
-\subsection{public key encryption}
+\subsection{Public Key Encryption}
 \frame
 {
-    \frametitle{public key encryption}
+    \frametitle{Public Key Encryption}
     \begin{itemize}
     \item{A keypair consists of 2 parts: a private key and a public key}
     \item{A public key is shared freely}
@@ -59,7 +59,7 @@
     \item{The server sends a response that the client uses to verify the identity of the server.}
     \end{itemize}
 }
-\subsection{ssh config}
+\subsection{SSH Config}
 \frame
 {
 	\frametitle{~/.ssh/config}
@@ -71,7 +71,7 @@
 	\end{block}
 }
 \begin{frame}[fragile]
-\frametitle{without .ssh/config}
+\frametitle{Without .ssh/config}
 \begin{verbatim}
 ssh alice@acm.cs.uic.edu -p 22
 scp -P 22 alice@acm.cs.uic.edu:/ ~/acm/
@@ -79,15 +79,15 @@ rsync -e 'ssh -p 22' alice@acm.cs.uic.edu:~/ ~/acm/
 \end{verbatim}
 \end{frame}
 \begin{frame}[fragile]
-\frametitle{with .ssh/config}
+\frametitle{With .ssh/config}
 \begin{verbatim}
 ssh acm
 scp acm:/ ~/acm/
 rsync acm:~/ ~/acm/
 \end{verbatim}
 \end{frame}
-\section{file transfer}
-\subsection{scp a file}
+\section{File Transfer}
+\subsection{SCP a File}
 \frame
 {
     \frametitle{scp: secure copy}
@@ -96,16 +96,16 @@ rsync acm:~/ ~/acm/
     \item{scp user@remotehost:/path/to/file localdestination/}
     \end{itemize}
 }
-\subsection{scp a directory}
+\subsection{SCP a Directory}
 \frame
 {
-    \frametitle{scp: secure copy}
+    \frametitle{scp: Secure Copy}
     \begin{itemize}
     \item{scp locafile user@remotehost:/path/to/destination}
     \item{scp user@remotehost:/path/to/file localfile}
     \end{itemize}
 }
-\subsection{rsync}
+\subsection{Rsync}
 \frame
 {
     \frametitle{rsync}
@@ -114,20 +114,20 @@ rsync acm:~/ ~/acm/
     \item{rsync -auP localfile user@remotehost:/path/to/destination}
     \end{itemize}
 }
-\section{passwordless logins}
-\subsection{ssh keys}
+\section{Passwordless Logins}
+\subsection{SSH Keys}
 \frame
 {
-    \frametitle{ssh keys}
+    \frametitle{SSH Keys}
     \begin{itemize}
     \item{SSH keys can be used as a secure alternative to password based logins}
     \item{useful for ssh base version control systems like git, mercurial, and subversion}
     \end{itemize}
 }
-\subsection{how a keypair works}
+\subsection{How a Keypair Works}
 \frame
 {
-    \frametitle{how a keypair works}
+    \frametitle{How a Keypair Works}
     \begin{itemize}
     \item{similar in concept to fingerprint identification}
     \item{the server has your public key}
@@ -135,10 +135,10 @@ rsync acm:~/ ~/acm/
     \item{you use your private key to decrypt the message and prove your identity}
     \end{itemize}
 }
-\subsection{creating a ssh keypair}
+\subsection{Creating a SSH Keypair}
 \frame
 {
-    \frametitle{creating a ssh keypair}
+    \frametitle{Creating a SSH Keypair}
     \begin{itemize}
     \item{ssh-keygen}
     \item{save file in defalt location (\~/.ssh/id\_rsa)}
@@ -146,10 +146,10 @@ rsync acm:~/ ~/acm/
     \item{confirm passphrase}
     \end{itemize}
 }
-\subsection{copy public key}
+\subsection{Copy Public Key}
 \frame
 {
-    \frametitle{copy public key}
+    \frametitle{Copy Public Key}
     \begin{itemize}
     \item{copy public key (~/.ssh/id\_rsa.pub) to host computers in ~/.ssh/authorized\_keys2}
     \item{ssh-copy-id can automate this task}
@@ -166,18 +166,18 @@ rsync acm:~/ ~/acm/
     \frametitle{ssh-agent}
     Most window manager come with an ssh-agent that will ask for your passphrase the first time you use a key, including gnome(ubuntu) and kde.  The commandline program `ssh-agent` can be used in instances where an existing ssh-agent is not available.
 }
-\section{persistance}
-\subsection{The problem}
+\section{Persistance}
+\subsection{The Problem}
 \frame
 {
     \frametitle{The problem}
     With ssh, or any shell applicaiton, any program you launch becomes a child of that shell.  when you exit the shell, the program also exits.
 
 }
-\subsection{disown the process}
+\subsection{Disown the Process}
 \frame
 {
-  \frametitle{disown the process}
+  \frametitle{Disown the Process}
   \begin{itemize}
   \item{press ctrl + z to suspend the process}
   \item{run `bg` to background suspened processes}
@@ -186,22 +186,22 @@ rsync acm:~/ ~/acm/
 }
 \frame
 {
-    \frametitle{disadvantages}
+    \frametitle{Disadvantages}
     \begin{itemize}
     \item{cannot reconnect to the process}
     \end{itemize}
 }
-\subsection{option 2: screen}
+\subsection{Screen}
 \frame
 {
-  \frametitle{screen}
-  screen is a Terminal Multiplexor.\\
+  \frametitle{Screen}
+  screen is a Terminal Multiplexor.
   This lets us create screen sessions, and disconnect and reconnect to the freely.
 }
-\subsection{using screen}
+\subsection{Using Screen}
 \frame
 {
-  \frametitle{using screen}
+  \frametitle{Using Screen}
   \begin{itemize}
   \item{screen -R irc}
   \item{run irssi}
@@ -211,28 +211,28 @@ rsync acm:~/ ~/acm/
   \end{itemize}
 }
 
-\section{connecting from other platforms}
-\subsection{putty}
+\section{Connecting From Other Platforms}
+\subsection{Putty}
 \frame
 {
-    \frametitle{putty}
+    \frametitle{Putty}
     \begin{itemize}
     \item{windows based ssh client}
     \item{support ssh-agent like abilities with paegent}
     \end{itemize}
 }
-\subsection{winscp}
+\subsection{WinSCP}
 \frame
 {
-    \frametitle{winscp}
+    \frametitle{WinSCP}
     \begin{itemize}
     \item{windows based file transfer client}
     \end{itemize}
 }
-\subsection{fugu}
+\subsection{Fugu}
 \frame
 {
-    \frametitle{fugu}
+    \frametitle{Fugu}
     \begin{itemize}
     \item{OS X based Secure File Transfer client}
     \end{itemize}
