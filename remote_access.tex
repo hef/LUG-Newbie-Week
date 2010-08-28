@@ -1,4 +1,6 @@
 \documentclass[hyperref={pdfpagelabels=false}]{beamer}
+%\documentclass{article}
+%\usepackage{beamerarticle}
 \usepackage{beamerthemesplit}
 \usepackage{lmodern}
 \title{Connecting to linux from other systems}
@@ -61,12 +63,12 @@
 \frame
 {
 	\frametitle{~/.ssh/config}
-	\begin{itemize}
-	\item{Host acm}
-	\item{Hostname acm.cs.uic.edu}
-	\item{User alice}
-	\item{Port 22}
-	\end{itemize}
+	\begin{block}{~/.ssh/.config}
+	Host acm\\
+	Hostname acm.cs.uic.edu\\
+	User alice\\
+	Port 22
+	\end{block}
 }
 \begin{frame}[fragile]
 \frametitle{without .ssh/config}
