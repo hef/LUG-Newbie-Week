@@ -86,23 +86,22 @@ rsync acm:~/ ~/acm/
 \end{frame}
 \section{File Transfer}
 \subsection{SCP a File}
-\frame
-{
+\begin{frame}[fragile]
     \frametitle{scp: secure copy}
-    \begin{itemize}
-    \item{scp locafile user@remotehost:/path/to/destination/}
-    \item{scp user@remotehost:/path/to/file localdestination/}
-    \end{itemize}
-}
+        \begin{verbatim}
+        scp localfile user@remotehost:~/path/to/destination/
+        scp user@remotehost:~/path/to/file localfile
+        \end{verbatim}
+\end{frame}
 \subsection{SCP a Directory}
-\frame
-{
-    \frametitle{scp: Secure Copy}
-    \begin{itemize}
-    \item{scp locafile user@remotehost:/path/to/destination}
-    \item{scp user@remotehost:/path/to/file localfile}
+\begin{frame}[fragile]
+    \frametitle{scp: secure copy}
+    \begin{verbatim}
+    scp -r localdirectory user@remotehost:/path/to/destination/
+    scp -r user@remotehost:~/path/to/directory ~/localpath/
     \end{itemize}
-}
+    \end{verbatim}
+\end{frame}
 \subsection{Rsync}
 \frame
 {
