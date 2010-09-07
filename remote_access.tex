@@ -127,7 +127,7 @@ scp -r user@remotehost:~/directory ~/localdir/
     \begin{itemize}
     \item{similar in concept to fingerprint identification}
     \item{the server has your public key}
-    \item{the server send a challange message by encrypting data against your public key}
+    \item{the server send a challenge message by encrypting data against your public key}
     \item{you use your private key to decrypt the message and prove your identity}
     \end{itemize}
 }
@@ -137,7 +137,7 @@ scp -r user@remotehost:~/directory ~/localdir/
     \frametitle{Creating a SSH Keypair}
     \begin{itemize}
     \item{ssh-keygen}
-    \item{save file in defalt location (\~/.ssh/id\_rsa)}
+    \item{save file in default location (\~/.ssh/id\_rsa)}
     \item{enter a passphrase}
     \item{confirm passphrase}
     \end{itemize}
@@ -160,14 +160,14 @@ scp -r user@remotehost:~/directory ~/localdir/
 \frame
 {
     \frametitle{ssh-agent}
-    Most window manager come with an ssh-agent that will ask for your passphrase the first time you use a key, including gnome(ubuntu) and kde.  The commandline program `ssh-agent` can be used in instances where an existing ssh-agent is not available.
+    Most window managers come with an ssh-agent that will ask for your passphrase the first time you use a key, including gnome(ubuntu) and kde.  The command line program `ssh-agent` can be used in instances where an existing ssh-agent is not available.
 }
 \section{Persistance}
 \subsection{The Problem}
 \frame
 {
     \frametitle{The problem}
-    With ssh, or any shell applicaiton, any program you launch becomes a child of that shell.  when you exit the shell, the program also exits.
+    With ssh, or any shell application, any program you launch becomes a child of that shell.  When you exit the shell, the program also exits.
 
 }
 \subsection{Disown the Process}
@@ -176,7 +176,7 @@ scp -r user@remotehost:~/directory ~/localdir/
   \frametitle{Disown the Process}
   \begin{itemize}
   \item{press ctrl + z to suspend the process}
-  \item{run `bg` to background suspened processes}
+  \item{run `bg` to background suspended processes}
   \item{run `disown -h` to disown background processes}
   \end{itemize}
 }
@@ -192,7 +192,7 @@ scp -r user@remotehost:~/directory ~/localdir/
 {
   \frametitle{Screen}
   screen is a Terminal Multiplexor.
-  This lets us create screen sessions, and disconnect and reconnect to the freely.
+  This lets us create screen sessions, and disconnect and reconnect to them freely.
 }
 \subsection{Using Screen}
 \frame
