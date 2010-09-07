@@ -17,12 +17,9 @@ Go to the Console
   - Get your own account by ????
 - Go to the Applications button on the menu bar
   - Accessories -> Terminal
-- bash
-  - sh
-  - zsh
-  - csh
+- bash 
+- explanation of shell vs. terminal
 Directory Navigation
-- bash
 - ls
   - Lists files and directories
     - Folders in windows
@@ -37,18 +34,18 @@ Directory Navigation
   - ls -l | more
 - pwd
 - cd <directory>
-- mkdir
-- rmdir
 - cd /
-  - No drives
+  - No c drive(s)
+- cd ~
 - Home directory
   - Where it is
+- cd .
+- cd ..
+- mkdir
+- rmdir (op.)
 - mount
   - umount
 - whoami
-- cd ~
-- cd .
-- cd ..
 - touch
 - mv -i
   - rename
@@ -59,8 +56,8 @@ Directory Navigation
 Permissions
 - echo
   - bash
-  - echo \#\!/usr/bin/perl -w > temp
-  - echo print \"Hello world\!\\n\" >> temp
+  - echo \#\!/usr/bin/perl -w > temp (change)
+  - echo print \"Hello world\!\\n\" >> temp (change)
   - Note quoting and escape characters
   - file redirection  
 - cat
@@ -74,11 +71,11 @@ Permissions
   - traverse
 - chown
 - chgrp
-- sticky bit and setuid (ug+s)
-- Links
+- sticky bit and setuid (ug+s) (op.)
+- Links (op.)
   - Like shortcut
-  - ln
-    - Hard link
+  - ln (cut)
+    - Hard link 
     - Just files
     - Both names are equal?
   - ln -s
