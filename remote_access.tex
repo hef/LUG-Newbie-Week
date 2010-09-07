@@ -132,22 +132,21 @@ scp -r user@remotehost:~/directory ~/localdir/
     \end{itemize}
 }
 \subsection{Creating a SSH Keypair}
-\frame
-{
+\begin{frame}[fragile]
     \frametitle{Creating a SSH Keypair}
-    \begin{itemize}
-    \item{ssh-keygen}
-    \item{save file in default location (\~/.ssh/id\_rsa)}
-    \item{enter a passphrase}
-    \item{confirm passphrase}
-    \end{itemize}
-}
+\begin{semiverbatim}
+ssh-keygen
+save file in default location (~/.ssh/id\_rsa)
+enter a passphrase
+confirm passphrase
+\end{semiverbatim}
+\end{frame}
 \subsection{Copy Public Key}
 \frame
 {
     \frametitle{Copy Public Key}
     \begin{itemize}
-    \item{copy public key (~/.ssh/id\_rsa.pub) to host computers in ~/.ssh/authorized\_keys2}
+    \item{copy public key (.ssh/id\_rsa.pub) to host computers in .ssh/authorized\_keys2}
     \item{ssh-copy-id can automate this task}
     \end{itemize}
 }
