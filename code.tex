@@ -8,75 +8,158 @@
 \frame{\titlepage}
 \section[outline]{}
 \frame{\tableofcontents}
-\section{editing}
-\subsection{nano}
-\frame
-{
-    \frametitle{nano}
-    \begin{itemize}
-    \item{familiar interface}
-    \item{included in almost every linux distribution}
-    \end{itemize}
-}
-\frame
-{
-    \frametitle{example}
-    nano -w hello.txt
-}
-\subsection{vim}
-\section{c++ code}
-\subsection{g++}
-\frame
-{
-    \frametitle{g++}
-    \begin{itemize}
-    \item{g++ myprogram.cpp -o myprogram}
-    \item{./myprogram}
-    \end{itemize}
-}
-\section{makefile}
-\subsection{gdb}
-\subsection{valgrind}
-\section{java code}
-\subsection{command line}
-\frame
-{
-    \frametitle{javac}
-    \begin{itemize}
-    \item{javac myprogram}
-    \item{java myproram}
-    \end{itemize}
-}
-\subsection{eclipse}
-\frame
-{
-    \frametitle{eclipse}
-    powerful java IDE (Integrated Developer Environment) developed by sun.
-}
-\subsection{Crappy IDE's}
-\frame
-{
-    \frametitle{Crappy IDE's}
-    \begin{itemize}
-    \item{Dr. Java}
-    \item{Blu Jay}
-    \end{itemize}
-}
-\frame
-{
-    \frametitle{beginer logic}
-    \begin{itemize}
-    \item{concept: programing is hard and scary. we should give beginers tools with limited capabilites}
-    \item{problem: beginers don't want to stay beginers}
-    \item{learn to use a decent IDE with a decent debugger, decent code prediction, syntax highlighting as soon as you are able}
-    \end{itemize}
-}
-\frame
-{
-    \frametitle{examples?}
-}
-\section{version control}
-\subsection{why?}
+\section{editors}
+	\subsection{what you use}
+	\frame
+	{
+	    \frametitle{beginner logic}
+	    \begin{itemize}
+	    \item{concept: programing is hard and scary. we should give beginers tools with limited capabilites}
+	    \item{problem: beginners don't want to stay beginners}
+	    \item{learn to use a decent IDE with a decent debugger, decent code prediction, syntax highlighting as soon as you are able}
+	    \end{itemize}
+	}
+	\subsection{nano/pico}
+		\frame
+		{
+		    \frametitle{nano}
+		    \begin{itemize}
+		    \item{familiar interface}
+		    \item{included in almost every linux distribution}
+		    \end{itemize}
+		}
+		\frame
+		{
+		    \frametitle{example}
+		    nano -w hello.txt
+		}
+	\subsection{vim}
+		\frame
+		{
+		    \frametitle{vim}
+		    \begin{itemize}
+		    \item{Vim is an advanced text editor that seeks to provide the power of the de-facto Unix editor 'Vi', with a more complete feature set.}
+		    \item{Also included in almost every linux distribution}
+		    \end{itemize}
+		}
+		\frame
+		{
+		    \frametitle{vim basics}
+		    \begin{itemize}
+		    \item{arrows/mouse : move around the file}
+		    \item{i : insert   a : append}
+		    \item{d : delete/cut}
+		    \item{y : yank/copy}
+		    \item{wq : save and quit}
+		    \item{w : save}
+		    \item{u : undo}
+		    \item{redo : ctrl+r}
+		    \end{itemize}
+		}
+		\frame
+		{
+		    \frametitle{more vim}
+		    \begin{itemize}
+		    \item{sp : splits the window}
+		    \item{m[letter] : assigns a macro}
+		    \item{v : visual mode}
+		    \item{ctrl+v : visual block}
+		    \item{gD : takes you to a variable/method declaration}
+		    \item{ctrl+n : auto-completion}
+		    \end{itemize}
+		}
+		\frame
+		{
+		    \frametitle{configuring vim}
+		    \begin{itemize}
+		    \item{set autoindent}
+		    \item{set smartindent}
+		    \item{set number : displays line numbers in the left margin}
+		    \end{itemize}
+		}
+	\subsection{eclipse}
+		\frame
+		{
+		    \frametitle{eclipse}
+		    \begin{itemize}
+		    \item{advanced and powerful IDE (Integrated Development Enviornment)}
+		    \item{Primarily used for Java development, however can be used for C/C++, PHP, Android development as well}
+		    \end{itemize}
+		}
+\section{compiling}
+	\subsection{g++}
+		\frame
+		{
+		    \frametitle{g++}
+		    \begin{itemize}
+		    \item{g++ myprogram.cpp -o myprogram}
+		    \item{./myprogram}
+		    \end{itemize}
+		}
+	\subsection{javac}
+		\frame
+		{
+		    \frametitle{javac}
+		    \begin{itemize}
+		    \item{javac myprogram.java}
+		    \item{java -cp myprogram}
+		    \end{itemize}
+		}
+	\subsection{makefiles}
+%		\frame
+%		{
+%		    \frametitle{C/C++}
+%		    \begin{itemize}
+%		    \item{ sample makefile }
+%		    \end{itemize}
+%		}
+\section{debugging}
+	\subsection{introduction}
+		\frame
+		{
+		    \frametitle{introduction}
+		    \begin{itemize}
+		    \item{debugging is the process of identifying the root cause of an error and correcting it}
+		    \item{debugging can take up to 50 percent of development time and can be the hardest part}
+		    \item{forces you to read and understand your code}
+		    \end{itemize}
+		}
+	\subsection{tools}
+		\frame
+		{
+		    \frametitle{tools}
+		    \begin{itemize}
+		    \item{gdb: (GNU Project Debugger)}
+		    \item{ddd: graphical front end for gdb}
+		    \item{compiler!!}
+		    \item{eclipse has a very good debugger for your java code}
+		    \end{itemize}
+		}
+
+	\subsection{tips}
+		\frame
+		{
+		    \frametitle{tips}
+		    \begin{itemize}
+		    \item{try using a binary search algorithm to find the source of the error}
+		    \item{talk to someone about your problem a.k.a. confessional debugging}
+		    \item{take a break from the problem (go for a walk, get some coffee, etc)}
+		    \item{make sure to save the original source (version control?)}
+		    \item{well formatted and organized code makes debugging a lot easier}
+		    \end{itemize}
+		}
+\section{resources}
+	\subsection{resources}
+	\frame
+	{
+	    \frametitle{resources}
+	    \begin{itemize}
+	    \item{download eclipse: http://www.eclipse.org/downloads/}
+	    \item{VIM cheatsheet: http://www.zalas.eu/uploads/wp/2010/05/vi-vim-cheat-sheet.gif}
+	    \item{Guide to Faster, Less Frustrating Debugging: http://heather.cs.ucdavis.edu/~matloff/UnixAndC/CLanguage/Debug.html}
+	    \item{Guide to Makefiles: http://www.delorie.com/djgpp/doc/ug/larger/makefiles.html}
+	    \end{itemize}
+	}
 %tell story
 %work on some code, its beutiful
 %add feature, it doesn't work
