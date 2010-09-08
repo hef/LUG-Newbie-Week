@@ -6,8 +6,6 @@
 \date{\today}
 \begin{document}
 \frame{\titlepage}
-\section[Outline]{}
-\frame[allowframebreaks]{\tableofcontents}
 \section{Wireless}
 \subsection{About 802.1x}
 \frame
@@ -71,21 +69,31 @@
 \frame
 {
     \frametitle{Checking the List of Assignments}
+	turnin -c cs102 -l
 }
 \subsection{Turning in an Assignment}
 \frame
 {
     \frametitle{Turning in an Assignment}
+	turnin -c cs102 -p prog1 myfile\\
+	turnin -c cs102 -p prog1 MyProjectFolder\\
+	turnin -c cs102 -p prog1 *.java
 }
 \subsection{Verifying Turnin}
 \frame
 {
     \frametitle{Ensureing That an Assigment Was Turned In}
+	turnin -c cs102 -p prog1 -v
+
 }
 \subsection{Resubmitting an Assingment}
 \frame
 {
     \frametitle{Turning in an Assignment a Second Time}
+	turnin -c cs102 -p prog1 myfile\\
+	turnin -c cs102 -p prog1 MyProjectFolder\\
+	turnin -c cs102 -p prog1 *.java\\
+	
 }
 \section{UIC Servers}
 \frame
@@ -102,7 +110,7 @@
     \item{web hosting}
     \item{php, perl, bluestem, html}
     \item{shell access}
-    \item{http://www2.uic.edu/~netid/}
+    \item{http://www2.uic.edu/$\sim$netid/}
     \item{Solaris}
     \end{itemize}
 }
@@ -114,7 +122,7 @@
     \item{CS Department Server}
     \item{html}
     \item{Web hosting}
-    \item{http://cs.uic.edu/~cslogin/}
+    \item{http://cs.uic.edu/$\sim$cslogin/}
     \item{RHEL 5.5}
     \end{itemize}
 }
@@ -123,17 +131,18 @@
 {
     \frametitle{How to use webspace}
     \begin{itemize}
-    \item{create a \~/public\_hmtl directory}
+    \item{create a $\sim$/public\_hmtl directory}
     \end{itemize}
-}
-\subsection{CS Email Forwarding}
-\frame
-{
-    \frametitle{how to forward cs email}
 }
 \section{Getting Help}
 
 \subsection{ACCC}
+\frame
+{
+	\frametitle{ACCC}
+	The ACCC officially does not support linux, and will usually turn you away if
+	seek assistance from them.
+}
 \frame
 {
     \frametitle{Issues with ACCC}
@@ -156,20 +165,20 @@
 \subsection{CS Department}
 \frame
 {
-    \frametitle{Issues with CS department}
+    \frametitle{Issues with CS department Computers}
     \begin{itemize}
-    \item{don't know your account info, or account info doesn't work}
-    \item{need help running software}
-    \item{need software installed for a class}
+    \item{If you don't know your account info}
+    \item{If you your account info doesn't work}
+    \item{If you need help using software}
+    \item{If you need software installed for a class.}
     \end{itemize}
 }
 \frame
 {
     \frametitle{Contacting CS department}
     \begin{itemize}
-    \item{support@cs.uic.edu}
     \item{pester Stephen Liang}
-    \item{TODO: insert photo of Stephen}
+    \item{email support@cs.uic.edu}
     \end{itemize}
 }
 \end{document}
