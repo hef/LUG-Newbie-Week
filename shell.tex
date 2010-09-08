@@ -1,46 +1,330 @@
 \documentclass[hyperref={pdfpagelabels=false}]{beamer}
 \usepackage{beamerthemesplit}
 \usepackage{lmodern}
-\title{The Shell}
+\title{Using the Shell}
 \author{UIC Linux Users Group}
 \date{\today}
 \begin{document}
 \frame{\titlepage}
-\section[outline]{}
-\frame{\tableofcontents}
-\section{basic commands}
-\subsection{ls}
+\section{Using the Shell}
 \frame
 {
-	\frametitle{ls}
-	used to get a directory listing
+    \frametitle{Using the Shell}
+    Using the Shell\\
+    presented by Joel Luellwitz\\
+    \begin{itemize}
+    \item{Directory Navigation}
+    \item{Permissions}
+    \end{itemize}
+    Newbies Week\\
+    University of Illinois at Chicago\\
+    Linux Users Group\\
+    September 9th, 2010
 }
-\subsection{cd}
+\section{About the Presenter}
 \frame
 {
-	\frametitle{cd}
-	change directory
+    \frametitle{About the Presenter}
+    \begin{itemize}
+    \item{Alias: eviljoel (or ej)}
+    \item{Name: Joel Luellwitz}
+    \item{7 Years of Linux Experience}
+    \item{UIC Alumni}
+        \begin{itemize}
+        \item{Management Information Systems Masters from the CBA}
+        \end{itemize}
+    \item{Currently work at Peapod.com}
+    \end{itemize}
+	
 }
-\subsection{mkdir}
-\subsection{rmdir}
-\subsection{rm}
-\subsection{mv}
-\subsection{cp}
-\section{permisions}
-\subsection{read}
-\subsection{write}
-\subsection{execute (files)}
-\subsection{execute (directories)}
-\subsection{sticky bit}
-\subsection{suid bit}
-\subsection{octal}
-\section{links}
-\subsection{hardlink}
-\subsection{softlink}
-\section{Shell Expansion}
-\subsection{* expansion}
-\subsection{hidden files}
-\subsection{env varialbles}
-\subsection{\$HOME}
-\subsection{backtick substitution}
+\subsection{Hold Your Comments}
+\frame
+{
+Please hold your comments and contributions!
+    \begin{itemize}
+    \item{Questions are OK if you are confused or behind.}
+    \item{May have time for questions at the end.}
+    \end{itemize}
+}
+\section{Getting Started}
+\subsection{Open a Shell}
+\frame
+{
+    This is an interactive presentation.
+    \begin{itemize}
+    \item{Login}
+        \begin{itemize}
+        \item{Ask if you need help}
+        \end{itemize}
+    \item{ Click on Applications$\Rightarrow$Accessories$\Rightarrow$Terminal}
+    \item{ Type 'bash' (Enter) for a real shell.
+    \end{itemize}
+    
+}
+\subsection{A Shell, what is it?}
+\frame
+{
+    \frametitle{A Shell, what is it?}
+    \begin{itemize}
+    \item{It interprets commands from the user.}
+    \item{Passes control to other programs.}
+    \item{bash and other shells}
+    \end{itemize}
+}
+\section{Directory Navigation}
+\subsection{List (ls)}
+\frame
+{
+    \frametitle{List (ls)}
+    Lists files and directories.
+    \begin{itemize}
+    \item{Directories are folders}
+    \end{itemize}
+    \begin{itemize}
+    \item{ls}
+    \item{ls -l}
+    \item{ls -a}
+    \item{ls -la}
+    \end{itemize}
+}
+\frame
+{
+    \frametitle{List (ls) (continued)}
+    \begin{itemize}
+    \item{Wildcards}
+    \item{more}
+        \begin{itemize}    
+        \item{ls -l | more}
+        \end{itemize}
+    \end{itemize}
+}
+\subsection{bash Tips}	
+\frame
+{
+    \frametitle{Random bash Tips}
+    \begin{itemize}
+    \item{Tab Completion}
+    \item{History}
+    \end{itemize}
+}
+\subsection{Directory Commands}
+\frame
+{
+    \frametitle{Directory Commands}
+    \begin{itemize}
+    \item{pwd}
+    \item{mkdir}
+    \item{rmdir}
+    \end{itemize}
+}
+\subsection{Change Directory (cd)}
+\frame
+{
+    \frametitle{Change Directory (cd)}
+    Changes the current working directory.
+    \begin{itemize}
+    \item{cd <directory>}
+    \item{cd /}
+        \begin{itemize}
+        \item{All locations start here}
+        \item{No drives like on Windows or DOS}
+        \end{itemize}
+    \item{cd \texttildelow (or just cd)}
+        \begin{itemize}
+        \item{Taks you to /home/<your username>}
+        \end{itemize}
+    \end{itemize}
+}
+\frame
+{
+    \frametitle{Change Directory (cd) - Relative Navigation}
+    \begin{itemize}
+    \item{cd ./}
+    \item{cd ../}
+    \item{cd ../../someotherplace/}
+    \end{itemize}
+}
+\subsection{Mount Points}
+\frame
+{
+    \frametitle{Mount Points}
+    All physical volumes are part of the same hierarchy.
+    \begin{itemize}
+    \item{Mount points are found under /mnt and /media}
+    \item{mount}
+    \item{umount}
+    \end{itemize}
+}
+\subsection{Moving, Copying and Deleting}
+\frame
+{
+    \frametitle{Moving, Copying and Deleting}
+    \begin{itemize}
+    \item{touch}
+        \begin{itemize}
+        \item{Use it to create empty files}
+        \end{itemize}
+    \item{mv -i}
+	\begin{itemize}
+        \item{Rename and Move}
+        \end{itemize}
+    \item{cp -i}
+    \item{rm -i}
+	\begin{itemize}
+        \item{rm -rfI}
+        \end{itemize}
+    \end{itemize}
+}
+\section{Permissions}
+\subsection{Example Shell Script}
+\frame
+{	
+    \frametitle{Example Shell Script}
+    echo {\textbackslash}#{\textbackslash}!/bin/sh > temp.sh\\
+    echo echo {\textbackslash}"Hello world{\textbackslash}!{\textbackslash}{\textbackslash}n{\textbackslash}" >> temp.sh
+}
+\frame
+{
+    \frametitle{Example Shell Script (continued)}
+    \begin{itemize}
+    \item{cat temp.sh}
+    \item{echo}
+    \item{#!}
+    \item{file redirection}
+    \end{itemize}
+
+}
+\subsection{File Permissions}
+\frame
+{
+    \frametitle{File Permissions}
+    \begin{itemize}
+    \item{chmod <permission> file(s)}
+        \begin{itemize}
+        \item{Read u+r (r--)}
+        \item{Write u+w (-w-)}
+        \item{Execute u+x (--x)}
+            \begin{itemize}
+            \item{chmod u+x temp.sh}
+            \item{./temp.sh}
+            \end{itemize}
+        \end{itemize}
+    \item{ls -l}
+    \end{itemize}
+}
+\subsection{Directory Permissions}
+\frame
+{
+    \frametitle{Directory Permissions}
+    \begin{itemize}
+    \item{chmod <permission> directory(ies)}
+        \begin{itemize}
+        \item{Read u+r (r--)}
+        \item{Write (-w-)}
+        \item{Traverse (--x)}
+        \end{itemize}
+    \item{ls -l}
+        \begin{itemize}
+        \item{d---------}
+        \end{itemize}
+    \end{itemize}
+}
+\subsection{User, Group, Other Permissions}
+\frame
+{
+    \frametitle{User, Group, Other Permissions}
+    \begin{itemize}
+    \item{chmod u+rwx file(s) (-rwx------)}
+    \item{chmod g+rwx file(s) (----rwx---)}
+    \item{chmod o+rwx file(s) (-------rwx)}
+    \end{itemize}
+    \begin{itemize}
+    \item{chmod u-rw file(s)}
+    \item{chmod a+rx file(s)}
+    \item{chmod 755 file(s) (-rwxr-wr-w)}
+    \end{itemize}
+}
+\subsection{Complex Permissions}
+\frame
+{
+    \frametitle{User, Group, Other Permissions}
+    \begin{itemize}
+    \item{-rwsr-Sr-t}
+    \item{Layered directories to support complex permissions.}
+    \item{Access Control Lists}
+        \begin{itemize}
+        \item{Security Enhanced Linux}
+        \end{itemize}
+    \end{itemize}
+}
+\subsection{Symlinks}
+\frame
+{
+    \frametitle{Symlinks}
+    \begin{itemize}
+    \item{Can be used for security.}
+    \item{Hard and Soft Links}
+    \item{ln -s <realfile> <symlink>}
+        \begin{itemize}
+        \item{Like a Windows Shortcut}
+        \item{More Transparent}
+        \end{itemize}
+    \end{itemize}
+}
+\section{Other Important Commands and Applications}
+\subsection{Environment Variables}
+\frame
+{
+    \frametitle{Environment Variables}
+    \begin{itemize}
+    \item{echo \$TERM}
+    \item{export TERM="xterm"}
+    \item{\$SHELL \$DISPLAY \$HOSTNAME \$JAVA \$PATH}
+    \end{itemize}
+}
+\subsection{Text Editors}
+\frame
+{	
+    \frametitle{Text Editors}
+    \begin{itemize}
+    \item{Newbies use pico or nano}
+    \item{Real Linux users use vim}
+        \begin{itemize}
+        \item{Weird people use emacs}
+        \end{itemize}
+    \end{itemize}
+}
+\subsection{Other Commands}
+\frame
+{
+    \frametitle{Other Commands}
+    \begin{itemize}
+    \item{man}
+    \item{Ctrl-C}
+    \item{backtick (`)}
+    \item{screen}
+    \end{itemize}
+}
+\section{Questions}
+\frame
+{	
+    \frametitle{Questions?}
+    Questions?
+}
+\section{About LUG/ACM}
+\frame
+{	
+    \frametitle{About the UIC-LUG & UIC-ACM}
+    UIC LUG
+    \begin{itemize}
+    \item{Meet on Thursdays at 5:00 PM}
+    \item{Meetings in SEL 2260 (Next Door)}
+    \end{itemize}
+    UIC ACM
+    \begin{itemize}
+    \item{ACM Office: SEL East 2262}
+    \item{Meet on select Thursdays at 6:00 PM}
+    \item{Meetings in SEO 1000}
+    \end{itemize}
+}
 \end{document}
