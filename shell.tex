@@ -6,34 +6,19 @@
 \date{\today}
 \begin{document}
 \frame{\titlepage}
-\section{Using the Shell}
-\frame
-{
-    \frametitle{Using the Shell}
-    Using the Shell\\
-    presented by Joel Luellwitz\\
-    \begin{itemize}
-    \item{Directory Navigation}
-    \item{Permissions}
-    \end{itemize}
-    Newbies Week\\
-    University of Illinois at Chicago\\
-    Linux Users Group\\
-    September 9th, 2010
-}
 \section{About the Presenter}
 \frame
 {
     \frametitle{About the Presenter}
     \begin{itemize}
-%    \item{Alias: eviljoel (or ej)}
+    \item{Alias: eviljoel (or ej)}
     \item{Name: Joel Luellwitz}
-    \item{7 Years of Linux Experience}
+    \item{7 Years of Linux Experience.}
     \item{UIC Alumni}
         \begin{itemize}
-        \item{Management Information Systems Masters from the CBA}
+        \item{Management Information Systems Masters from the CBA.}
         \end{itemize}
-    \item{Currently work at Peapod.com}
+    \item{Works at Peapod.com.}
     \end{itemize}
 	
 }
@@ -54,10 +39,10 @@ Please hold your comments and contributions!
     \begin{itemize}
     \item{Login}
         \begin{itemize}
-        \item{Ask if you need help}
+        \item{Ask if you need help.}
         \end{itemize}
     \item{ Click on Applications$\Rightarrow$Accessories$\Rightarrow$Terminal}
-%    \item{ Type 'bash' (Enter) for a real shell.
+    \item{ Type 'bash' (Enter) for a real shell.}
     \end{itemize}
    
 }
@@ -68,7 +53,11 @@ Please hold your comments and contributions!
     \begin{itemize}
     \item{It interprets commands from the user.}
     \item{Passes control to other programs.}
-    \item{bash and other shells}
+    \item{Supports batch operations via scripting.}
+    \item{bash is one of many shells.}
+        \begin{itemize}
+        \item{sh, csh, tcsh, zsh, etc.}
+        \end{itemize}
     \end{itemize}
 }
 \section{Directory Navigation}
@@ -78,7 +67,7 @@ Please hold your comments and contributions!
     \frametitle{List (ls)}
     Lists files and directories.
     \begin{itemize}
-    \item{Directories are folders}
+    \item{Directories are equivalent to folders.}
     \end{itemize}
     \begin{itemize}
     \item{ls}
@@ -91,10 +80,10 @@ Please hold your comments and contributions!
 {
     \frametitle{List (ls) (continued)}
     \begin{itemize}
-    \item{Wildcards}
+    \item{Wildcards (* and ?)}
     \item{more}
         \begin{itemize}    
-        \item{ls -l | more}
+        \item{ls -l $\mid$ more}
         \end{itemize}
     \end{itemize}
 }
@@ -104,7 +93,7 @@ Please hold your comments and contributions!
     \frametitle{Random bash Tips}
     \begin{itemize}
     \item{Tab Completion}
-    \item{History}
+    \item{Command History}
     \end{itemize}
 }
 \subsection{Directory Commands}
@@ -113,8 +102,8 @@ Please hold your comments and contributions!
     \frametitle{Directory Commands}
     \begin{itemize}
     \item{pwd}
-    \item{mkdir}
-    \item{rmdir}
+    \item{mkdir {\textless}directory\textgreater\hspace{.5 pc}}
+    \item{rmdir {\textless}directory\textgreater\hspace{.5 pc}}
     \end{itemize}
 }
 \subsection{Change Directory (cd)}
@@ -123,15 +112,15 @@ Please hold your comments and contributions!
     \frametitle{Change Directory (cd)}
     Changes the current working directory.
     \begin{itemize}
-    \item{cd <directory>}
+    \item{cd {\textless}directory\textgreater}
     \item{cd /}
         \begin{itemize}
-        \item{All locations start here}
-        \item{No drives like on Windows or DOS}
+        \item{All locations start here.}
+        \item{No drives like on Windows or DOS.}
         \end{itemize}
-%    \item{cd \texttildelow (or just cd)}
+    \item{cd $\sim$ (or just cd)}
         \begin{itemize}
-        \item{Taks you to /home/<your username>}
+        \item{Taks you to /home/{\textless}your username\textgreater}
         \end{itemize}
     \end{itemize}
 }
@@ -150,9 +139,9 @@ Please hold your comments and contributions!
     \frametitle{Mount Points}
     All physical volumes are part of the same hierarchy.
     \begin{itemize}
-    \item{Mount points are found under /mnt and /media}
-    \item{mount}
-    \item{umount}
+    \item{Mount points are found under /mnt and /media.}
+    \item{mount {\textless}device\textgreater\hspace{.5 pc}{\textless}mount point\textgreater\hspace{.5 pc}}
+    \item{umount {\textless}mount point\textgreater\hspace{.5 pc}}
     \end{itemize}
 }
 \subsection{Moving, Copying and Deleting}
@@ -160,28 +149,28 @@ Please hold your comments and contributions!
 {
     \frametitle{Moving, Copying and Deleting}
     \begin{itemize}
-    \item{touch}
+    \item{touch} {\textless}file\textgreater\hspace{.5 pc}
         \begin{itemize}
-        \item{Use it to create empty files}
+        \item{Use it to create empty files.}
         \end{itemize}
-    \item{mv -i}
+    \item{mv -i {\textless}source\textgreater\hspace{.5 pc}{\textless}destination\textgreater\hspace{.5 pc}}
 	\begin{itemize}
         \item{Rename and Move}
         \end{itemize}
-    \item{cp -i}
-    \item{rm -i}
+    \item{cp -i {\textless}source\textgreater\hspace{.5 pc}{\textless}destination\textgreater\hspace{.5 pc}}
+    \item{rm -i {\textless}file(s)\textgreater\hspace{.5 pc}}
 	\begin{itemize}
-        \item{rm -rfI}
+        \item{rm -rfI {\textless}file(s)\textgreater\hspace{.5 pc}}
         \end{itemize}
     \end{itemize}
 }
 \section{Permissions}
 \subsection{Example Shell Script}
 \frame
-{	
+{
     \frametitle{Example Shell Script}
-%    echo {\textbackslash}#{\textbackslash}!/bin/sh > temp.sh\\
-%    echo echo {\textbackslash}"Hello world{\textbackslash}!{\textbackslash}{\textbackslash}n{\textbackslash}" >> temp.sh
+    echo \textbackslash\#\textbackslash!/bin/sh \textgreater \hspace{.5 pc}temp.sh\\
+    echo echo \textbackslash"Hello world\textbackslash!\textbackslash{\textbackslash}n\textbackslash" \textgreater\textgreater \hspace{.5 pc}temp.sh
 }
 \frame
 {
@@ -189,8 +178,8 @@ Please hold your comments and contributions!
     \begin{itemize}
     \item{cat temp.sh}
     \item{echo}
-%    \item{#!}
-    \item{file redirection}
+    \item{\#!}
+    \item{File Redirection}
     \end{itemize}
 }
 \subsection{File Permissions}
@@ -198,11 +187,11 @@ Please hold your comments and contributions!
 {
     \frametitle{File Permissions}
     \begin{itemize}
-    \item{chmod <permission> file(s)}
+    \item{chmod {\textless}permission\textgreater\hspace{.5 pc}file(s)}
         \begin{itemize}
-        \item{Read u+r (r--)}
-        \item{Write u+w (-w-)}
-        \item{Execute u+x (--x)}
+        \item{Read u+r (r\hspace{.1 pc}-\hspace{.1 pc}-)}
+        \item{Write u+w (-\hspace{.1 pc}w\hspace{.1 pc}-)}
+        \item{Execute u+x (-\hspace{.1 pc}-\hspace{.1 pc}x)}
             \begin{itemize}
             \item{chmod u+x temp.sh}
             \item{./temp.sh}
@@ -216,15 +205,15 @@ Please hold your comments and contributions!
 {
     \frametitle{Directory Permissions}
     \begin{itemize}
-    \item{chmod <permission> directory(ies)}
+    \item{chmod {\textless}permission\textgreater\hspace{.5 pc}directory(ies)}
         \begin{itemize}
-        \item{Read u+r (r--)}
-        \item{Write (-w-)}
-        \item{Traverse (--x)}
+        \item{Read u+r (r\hspace{.1 pc}-\hspace{.1 pc}-)}
+        \item{Write (-\hspace{.1 pc}w\hspace{.1 pc}-)}
+        \item{Traverse (-\hspace{.1 pc}-\hspace{.1 pc}x)}
         \end{itemize}
     \item{ls -l}
         \begin{itemize}
-        \item{d---------}
+        \item{d\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-}
         \end{itemize}
     \end{itemize}
 }
@@ -233,14 +222,14 @@ Please hold your comments and contributions!
 {
     \frametitle{User, Group, Other Permissions}
     \begin{itemize}
-    \item{chmod u+rwx file(s) (-rwx------)}
-    \item{chmod g+rwx file(s) (----rwx---)}
-    \item{chmod o+rwx file(s) (-------rwx)}
+    \item{chmod u+rwx {\textless}file(s)\textgreater\hspace{.5 pc}(-\hspace{.1 pc}r\hspace{.1 pc}w\hspace{.1 pc}x\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-)}
+    \item{chmod g+rwx {\textless}file(s)\textgreater\hspace{.5 pc}(-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}r\hspace{.1 pc}w\hspace{.1 pc}x\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-)}
+    \item{chmod o+rwx {\textless}file(s)\textgreater\hspace{.5 pc}(-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}-\hspace{.1 pc}r\hspace{.1 pc}w\hspace{.1 pc}x)}
     \end{itemize}
     \begin{itemize}
-    \item{chmod u-rw file(s)}
-    \item{chmod a+rx file(s)}
-    \item{chmod 755 file(s) (-rwxr-wr-w)}
+    \item{chmod u-rw {\textless}file(s)\textgreater\hspace{.5 pc}}
+    \item{chmod a+rx {\textless}file(s)\textgreater\hspace{.5 pc}}
+    \item{chmod 755 {\textless}file(s)\textgreater\hspace{.5 pc}(-\hspace{.1 pc}r\hspace{.1 pc}w\hspace{.1 pc}x\hspace{.1 pc}r\hspace{.1 pc}-\hspace{.1 pc}wr\hspace{.1 pc}-\hspace{.1 pc}w)}
     \end{itemize}
 }
 \subsection{Complex Permissions}
@@ -248,7 +237,7 @@ Please hold your comments and contributions!
 {
     \frametitle{User, Group, Other Permissions}
     \begin{itemize}
-    \item{-rwsr-Sr-t}
+    \item{-\hspace{.1 pc}r\hspace{.1 pc}w\hspace{.1 pc}s\hspace{.1 pc}r\hspace{.1 pc}-\hspace{.1 pc}S\hspace{.1 pc}r\hspace{.1 pc}-\hspace{.1 pc}t}
     \item{Layered directories to support complex permissions.}
     \item{Access Control Lists}
         \begin{itemize}
@@ -263,10 +252,10 @@ Please hold your comments and contributions!
     \begin{itemize}
     \item{Can be used for security.}
     \item{Hard and Soft Links}
-    \item{ln -s <realfile> <symlink>}
+    \item{ln -s {\textless}realfile\textgreater\hspace{.5 pc}{\textless}symlink\textgreater\hspace{.5 pc}}
         \begin{itemize}
-        \item{Like a Windows Shortcut}
-        \item{More Transparent}
+        \item{Like a Windows Shortcut.}
+        \item{More Transparent.}
         \end{itemize}
     \end{itemize}
 }
@@ -283,13 +272,13 @@ Please hold your comments and contributions!
 }
 \subsection{Text Editors}
 \frame
-{	
+{
     \frametitle{Text Editors}
     \begin{itemize}
-    \item{Newbies use pico or nano}
-    \item{Real Linux users use vim}
+    \item{Newbies use pico or nano.}
+    \item{Real Linux users use vim.}
         \begin{itemize}
-        \item{Weird people use emacs}
+        \item{Weird people use emacs.}
         \end{itemize}
     \end{itemize}
 }
@@ -306,24 +295,24 @@ Please hold your comments and contributions!
 }
 \section{Questions}
 \frame
-{	
+{
     \frametitle{Questions?}
     Questions?
 }
 \section{About LUG/ACM}
 \frame
-{	
-%    \frametitle{About the UIC-LUG & UIC-ACM}
+{
+    \frametitle{About the UIC-LUG \& UIC-ACM}
     UIC LUG
     \begin{itemize}
-    \item{Meet on Thursdays at 5:00 PM}
-    \item{Meetings in SEL 2260 (Next Door)}
+    \item{Meetings on Thursdays at 5:00 PM}
+    \item{in SEL 2260 (Next Door)}
     \end{itemize}
     UIC ACM
     \begin{itemize}
     \item{ACM Office: SEL East 2262}
-    \item{Meet on select Thursdays at 6:00 PM}
-    \item{Meetings in SEO 1000}
+    \item{Meetings on select Thursdays at 6:00 PM}
+    \item{in SEO 1000}
     \end{itemize}
 }
 \end{document}
