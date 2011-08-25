@@ -1,4 +1,7 @@
 \documentclass[hyperref={pdfpagelabels=false}]{beamer}
+%%% workaround: http://tex.stackexchange.com/questions/4436/beamer-undefined-control-sequence
+\providecommand\thispdfpagelabel[1]{}
+%%%
 \usepackage{beamerthemesplit}
 \usepackage{lmodern}
 \title{Using the Shell}
