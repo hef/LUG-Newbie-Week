@@ -19,5 +19,4 @@ Arch
 OS X with macports
 ------------------
 
-    sudo port install texlive
-
+    sudo port install texlive-latex texlive-latex-recommended
