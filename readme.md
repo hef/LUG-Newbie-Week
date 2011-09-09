@@ -1,6 +1,7 @@
 Newbie Week Slides
 ==================
 
+This is a collection of presentations used by the Univerity of Illinois Linux User's group for the (bi)annual Newbie's Week.  The event is designed to introduce users to linux concepts at UIC.
 
 
 Installing texlive for your platform
@@ -13,7 +14,7 @@ Arch
 ----
 
     sudo pacman -Sy texlive-most
-    sudo yaourt -Sy latex-beamer
+    yaourt -Sy latex-beamer
 
 
 OS X with macports
