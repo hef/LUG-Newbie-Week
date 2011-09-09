@@ -1,15 +1,10 @@
+.sconsign.dblite
 *.aux
-*.cookie
+*.fls
 *.log
 *.nav
 *.out
 *.pdf
 *.snm
 *.toc
-*.temp
-*.swp
 *.vrb
-*~
-*.make
-*.d
-*.fls
